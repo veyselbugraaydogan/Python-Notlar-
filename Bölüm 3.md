@@ -81,8 +81,7 @@ String değişkenlerine bir char dizisi gibi erişilebilir.
 'P'
 
 ```
-Ayrıca Python da dizilerin indisleri biraz garip. Örneğin biraz önceki word
-değişkeninde indislerin hangi karakterlere geldiğini şöyle gösterebiliriz.
+Word değişkeninde indislerin hangi karakterlere denk geldiğini şöyle gösterebiliriz.
 
 ```
  +---+---+---+---+---+---+
@@ -99,4 +98,73 @@ geliyor. İlk bakışta dairesel mantıkla gidiyormuş gibi görünse de bu stri
 indisi yok, -7. indisi de yok. Sadece -6 dan +6 ya kadar indislenebilir.
 
 ### Python da dilimleme (slicing)
+
+`word[0:2]` -> 0. indisten 2. indise kadar (2 hariç)
+
+`word[4:]` -> 4. indisten sonuna kadar.
+
+`word[-2:]` -> -2. indisten sonuna kadar
+
+`word[:2]` -> başından 2. (hariç) indise kadar
+
+Dilimleme, dilimlenen nesnenin bir kopyasını döndürür!(sığ(shallow) kopya) Yani 
+nesnenin aslını döndürmez.
+
+Normalde olmayan bir indise erişmeye çalışmak Pythonda IndexError verir. Ama 
+dilimlemede indis dışı erişim hata vermez.
+
+Örneğin dilimlemeyi `word[4:42]` gibi kullanabiliriz.
+
+Pythonda stringler __değişmezdir__ (immutable). Bu terimi artık daha fazla 
+kullanacağız.
+örneğin `word[0] = 'J'` kodu TypeError verir. Aynı şekilde `word[2:] = 'py'` de hata
+verir. Eğer farklı bir string instersek yenisini yaratmalıyız;
+`'J' + word[1:]`
+
+len() fonksiyonu stringin uzunluğunu verir.
+
+`len(s)`
+
+### Listeler
+
+Python da bir çok veri tipi vardır ve bunların en kullanışlısı listelerdir.
+Listeler şu şekilde tanımlanabilir:
+
+`squares = [1, 4, 9, 16, 25]`
+
+Listeler aynı stringler gibi dilimlenebilir.
+
+`squares[:]` listenin sığ kopyasını döndürür.
+
+Listelerle birleştirme(concatenate) işlemi de yapılabilir.
+
+`squares + [36, 49, 64, 81, 100]`
+
+Listeler __değişebilirdir__ (mutable).
+
+`cubes[3] = 64` 
+
+Listelere append() metoduyla eleman eklenebilir.
+
+Ayrıca dilimleme yöntemiyle listeler değiştirilebilir, elemanları silinebilir ekleme 
+yapılabilir.
+
+```
+num = []
+
+num = [1,2,3,4,5]
+
+num[5:] = [6]
+
+print(len(num))
+```
+Listeler içinde başka listeler barındırabilir.
+
+```
+a = ['a', 'b', 'c']
+n = [1, 2, 3, 4, 5, 6]
+x = [a, n]
+
+```
+
 

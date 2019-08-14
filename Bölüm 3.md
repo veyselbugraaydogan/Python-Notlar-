@@ -147,7 +147,7 @@ Listeler __değişebilirdir__ (mutable).
 Listelere append() metoduyla eleman eklenebilir.
 
 Ayrıca dilimleme yöntemiyle listeler değiştirilebilir, elemanları silinebilir ekleme 
-yapılabilir.
+yapılabilir.(sığ kopya döndürdüğü için)
 
 ```
 num = []
